@@ -1,0 +1,16 @@
+
+server:
+  port: 1010    #\u670D\u52A1\u7AEF\u53E3\u53F7\u4E3A 1111
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: localhost #\u4E3B\u673A\u540D
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5
+  client:
+    registerWithEureka: false #\u7981\u6B62\u6CE8\u518C\u4E2D\u5FC3\u6CE8\u518C\u81EA\u5DF1
+    fetchRegistry: false      #\u7981\u6B62\u68C0\u7D22\u670D\u52A1
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #\u6CE8\u518C\u4E2D\u5FC3\u5730\u5740
